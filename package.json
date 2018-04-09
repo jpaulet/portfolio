@@ -1,0 +1,34 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "autoprefixer": "postcss -u autoprefixer -r production/css/*.css",
+    "scss": "node-sass --output-style expanded --indent-width 4 -o production/css development/scss",
+    "uglify": "uglifyjs development/js/*.js -m -o production/js/scripts.js",
+    "serve": "browser-sync start --server --files \"production/css/*.css, production/js/*.js\"",
+    "build:css": "npm run scss && npm run autoprefixer",
+    "build:js": "npm run uglify",
+    "build:all": "npm run build:css && npm run build:js",
+    "watch:css": "onchange \"development/scss\" -- npm run build:css",
+    "watch:js": "onchange \"development/js\" -- npm run build:js",
+    "watch:all": "npm-run-all -p serve watch:css watch:js",
+    "start": "npm run build:all && npm run watch:all"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.7.6",
+    "browser-sync": "^2.18.8",
+    "node-sass": "^4.5.0",
+    "npm-run-all": "^4.0.2",
+    "onchange": "^3.2.1",
+    "postcss-cli": "^3.0.0-beta",
+    "uglify-js": "^2.8.3",
+    "webpack": "^4.5.0"
+  },
+  "author": "J.P. Aulet",
+  "license": "ISC",
+  "dependencies": {
+    "lightbox2": "^2.10.0"
+  }
+}
