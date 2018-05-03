@@ -1,0 +1,25 @@
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.fa-twitter:before {
+    content: "\f099"
+}
+
+.fa-github:before {
+    content: "\f09b"
+}
+
+.fa-stack-overflow:before {
+    content: "\f16c"
+}
+
+.fa-linkedin:before {
+    content: "\f0e1"
+}
+
