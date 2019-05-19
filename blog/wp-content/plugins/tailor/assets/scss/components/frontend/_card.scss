@@ -1,0 +1,66 @@
+//
+// Variables
+//
+
+// General
+$card-class-prefix: $global-class-prefix !default;
+$card-spacing-vertical: $global-spacing-vertical !default;
+$card-padding: 1em !default;
+$card-font-size: $global-font-size !default;
+$card-color: inherit !default;
+$card-border-width: $global-border-width !default;
+$card-border-style : $global-border-style !default;
+$card-border-color: $global-border-color !default;
+$card-border-radius: 0 !default;
+$card-background-color: transparent !default;
+$card-box-shadow: $global-box-shadow !default;
+
+
+//
+// Exported selectors
+//
+.#{$global-class-prefix}ui {
+
+	.#{$card-class-prefix}card {
+		margin-bottom: $card-spacing-vertical;
+		font-size: $card-font-size;
+		color: $card-color;
+		background-color: $card-background-color;
+		border: $card-border-width $card-border-style $card-border-color;
+		border-radius: $card-border-radius;
+		overflow: hidden;
+		box-shadow: $card-box-shadow;
+
+		&__header {
+			margin: 0;
+			display: table;
+			width: 100%;
+			border-bottom: $card-border-width $card-border-style $card-border-color;
+		}
+
+		&__title {
+			display: table-cell;
+			vertical-align: bottom;
+			color: inherit;
+			font-size: ( $card-font-size * 1.25 );
+		}
+
+		&__header:not( :empty ),
+		&__content {
+			padding: $card-padding ( $card-padding * 1.25 );
+		}
+
+		// States
+		&.has-header-image {
+
+			.#{$card-class-prefix}card {
+
+				&__header {
+					color: #fff;
+					text-shadow: 1px 1px #666;
+					height: 180px;
+				}
+			}
+		}
+	}
+}

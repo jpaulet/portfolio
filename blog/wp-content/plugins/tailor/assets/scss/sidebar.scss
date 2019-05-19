@@ -1,0 +1,53 @@
+@import "variables";
+
+//
+// Tools
+//
+@import "tools/keyframes";
+@import "tools/transform";
+@import "tools/transition";
+@import "tools/user-select";
+@import "tools/prefixer";
+@import "tools/clearfix";
+@import "tools/box-shadow";
+
+//
+// Generic styles
+//
+@import "generic/normalize";
+@import "generic/reset";
+@import "generic/box-sizing";
+
+//
+// Base styles
+//
+@import "base/sidebar/forms";
+@import "base/sidebar/headings";
+@import "base/sidebar/paragraph";
+@import "base/sidebar/lists";
+
+//
+// Components
+//
+@import "components/sidebar/sidebar";
+@import "components/sidebar/panels";
+@import "components/sidebar/items";
+@import "components/sidebar/sections";
+@import "components/sidebar/controls";
+@import "components/sidebar/preview";
+
+@import "components/sidebar/dialogs";
+@import "components/sidebar/modals";
+@import "components/sidebar/notifications";
+
+//
+// Trumps
+//
+@import "trumps/shared/wordpress";
+@import "trumps/sidebar/rtl";
+
+//
+// Vendor
+//
+@import "vendor/codemirror";
+@import "vendor/select2";

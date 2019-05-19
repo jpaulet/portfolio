@@ -1,0 +1,214 @@
+//
+// Variables
+//
+$select-background-color: $global-primary-color !default;
+
+$guide-border-width: 4px !default;
+$guide-border-style: $global-border-style !default;
+$guide-border-color: $global-primary-color !default;
+$guide-background-color: $global-primary-color !default;
+
+
+//
+// Exported selectors
+//
+.#{$global-class-prefix}ui {
+
+	.tools {
+		pointer-events: none;
+		overflow: visible;
+
+		.select-container {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 999;
+		}
+
+		.select {
+			position: absolute;
+			z-index: 999;
+			font-family: $global-font-family;
+			font-size: $global-font-size;
+			pointer-events: none;
+
+			&__controls,
+			&__menu {
+				position: absolute;
+				top: 1px;
+				font-size: inherit;
+			}
+
+			&__controls {
+				right: 1px;
+			}
+
+			&__menu {
+				left: 1px;
+
+				.select {
+
+					&__item {
+						margin-bottom: 2px;
+						clear: both;
+						cursor: default;
+
+						&:not( :only-child ) {
+							cursor: pointer;
+
+							&:first-child::after {
+								content: "\f140";
+								display: inline-block;;
+								font-size: 1.25em;
+								font-family: dashicons;
+								text-decoration: inherit;
+								font-weight: 400;
+								font-style: normal;
+								vertical-align: top;
+								text-align: center;
+								-webkit-font-smoothing: antialiased;
+							}
+						}
+
+						&:not( :first-child ) {
+							display: none;
+						}
+					}
+				}
+			}
+
+			&__item {
+				float: left;
+				pointer-events: all;
+				cursor: pointer;
+
+				@include label( $select-background-color );
+
+				&:hover,
+				&:focus {
+					background-color: darken( $select-background-color, 5% );
+				}
+
+				@include user-select( none );
+
+				&--left {
+
+					&::after {
+						content: ' \25C0';
+					}
+				}
+
+				&--right {
+
+					&::after {
+						content: ' \25B6';
+					}
+				}
+			}
+
+			&.is-expanded .select {
+
+				&__menu  {
+
+					.select {
+
+						&__item {
+							display: block;
+
+							&:not( :only-child ) {
+
+								&:first-child::after {
+									content: "\f142";
+								}
+							}
+						}
+					}
+				}
+			}
+
+			&.is-minimal .select {
+
+				&__menu {
+					z-index: 2;
+				}
+
+				&__controls {
+					top: 29px;
+					left: 1px;
+					right: auto;
+					z-index: 1;
+				}
+
+				&__menu,
+				&__controls {
+
+					.select__item {
+						margin-bottom: 2px;
+						clear: both;
+					}
+				}
+			}
+
+			&.is-minimal.is-expanded .select {
+
+				&__controls {
+					display: none;
+				}
+			}
+		}
+
+		.guide {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			width: 100%;
+			pointer-events: none;
+			z-index: 999;
+
+			&--top {
+				border-top: $guide-border-width $guide-border-style $guide-border-color;
+			}
+
+			&--right {
+				border-right: $guide-border-width $guide-border-style $guide-border-color;
+			}
+
+			&--bottom {
+				border-bottom: $guide-border-width $guide-border-style $guide-border-color;
+			}
+
+			&--left {
+				border-left: $guide-border-width $guide-border-style $guide-border-color;
+			}
+
+			&--center {
+
+				@include prefixer( transform-style, preserve-3d, webkit moz spec );
+
+				&::before {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					content: '\002B';
+					padding: 0 8px;
+					font-family: $global-font-family;
+					font-size: 1em;
+					color: $global-white-color;
+					background-color: $guide-background-color;
+
+					@include transform( translate( -50%, -50% ) );
+				}
+			}
+
+			&::after {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				content: '';
+				background-color: rgba( 0, 160, 210, 0.1 );
+			}
+		}
+	}
+}

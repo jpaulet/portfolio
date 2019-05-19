@@ -1,0 +1,41 @@
+@import "variables";
+
+//
+// Tools
+//
+@import "tools/clearfix";
+
+
+//
+// Exported selectors
+//
+.tailor {
+
+	&-icon-kits {
+		margin-bottom: 1em;
+	}
+
+	&-icons__actions {
+		max-width: 120px;
+
+		.button,
+		.spinner {
+			float: left;
+		}
+
+		@include clearfix;
+	}
+}
+
+.settings-information {
+	background-color: $global-white-color;
+	padding: 1em 2em;
+}
+
+@media #{$wp-medium-up} {
+	
+	.settings-information {
+		position: absolute;
+		right: 20px;
+	}
+}

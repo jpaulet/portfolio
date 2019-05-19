@@ -1,0 +1,45 @@
+//
+// Variables
+//
+
+// General
+$widgets-class-prefix: $global-class-prefix !default;
+$widgets-spacing-vertical: $global-spacing-vertical !default;
+$widgets-padding: 0 !default;
+$widgets-font-size: $global-font-size !default;
+$widgets-color: inherit !default;
+$widgets-border-width: $global-border-width !default;
+$widgets-border-style : none !default;
+$widgets-border-color: $global-border-color !default;
+$widgets-border-radius: 0 !default;
+$widgets-background-color: transparent !default;
+$widgets-box-shadow: none !default;
+
+
+//
+// Exported selectors
+//
+.#{$global-class-prefix}ui {
+
+	.#{$widgets-class-prefix}widget {
+		padding: $widgets-padding;
+		margin-bottom: $widgets-spacing-vertical;
+		font-size: $widgets-font-size;
+		color: $widgets-color;
+		background-color: $widgets-background-color;
+		border: $widgets-border-width $widgets-border-style $widgets-border-color;
+		border-radius: $widgets-border-radius;
+		box-shadow: $widgets-box-shadow;
+	}
+
+	.#{$widgets-class-prefix}widget-area {
+		padding: $widgets-padding;
+		margin-bottom: $widgets-spacing-vertical;
+		font-size: $widgets-font-size;
+		color: $widgets-color;
+		background-color: $widgets-background-color;
+		border: $widgets-border-width $widgets-border-style $widgets-border-color;
+		border-radius: $widgets-border-radius;
+		box-shadow: $widgets-box-shadow;
+	}
+}

@@ -1,0 +1,69 @@
+//
+// Variables
+//
+
+// General
+$slideshow-class-prefix: $global-class-prefix !default;
+$slideshow-spacing-vertical: 0 !default;
+$slideshow-padding: 0 !default;
+
+// Element specific
+$slideshow-thumbnail-spacing: 4px !default;
+
+
+//
+// Exported selectors
+//
+.#{$global-class-prefix}ui {
+
+	.#{$slideshow-class-prefix}slideshow {
+		padding: $slideshow-padding;
+
+		&__slides,
+		&__slide {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+
+		&__slide {
+
+			img {
+				max-width: 100%;
+			}
+		}
+
+		.slick-track {
+			display: block;
+		}
+
+		.slick-dots li {
+			margin: 0 $slideshow-thumbnail-spacing;
+			list-style: none;
+		}
+
+		.slick-dots {
+			bottom: 0;
+			text-align: center;
+			border-top: none;
+			margin: $global-spacing-vertical 0;
+		}
+
+		.slick-dots li {
+			margin: 0;
+			display: inline-block;
+			width: 80px;
+			height: auto;
+			max-width: calc( 25% - #{$slideshow-thumbnail-spacing} );
+			cursor: pointer;
+
+			&:not( .slick-active ) {
+				opacity: 0.5;
+			}
+
+			img {
+				max-width: 100%;
+			}
+		}
+	}
+}

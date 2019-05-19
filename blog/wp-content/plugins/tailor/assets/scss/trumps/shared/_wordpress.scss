@@ -1,0 +1,30 @@
+.#{$global-class-prefix}ui {
+
+	.screen-reader-text {
+		position: absolute;
+		margin: -1px;
+		padding: 0;
+		height: 1px;
+		width: 1px;
+		overflow: hidden;
+		clip: rect(0 0 0 0);
+		border: 0;
+		word-wrap: normal !important;
+	}
+
+	.not-a-button {
+		background: 0 0;
+		border: none;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+		-webkit-border-radius: 0;
+		border-radius: 0;
+		outline: 0;
+		padding: 0;
+		margin: 0;
+	}
+
+	.is-hidden {
+		display: none !important;
+	}
+}

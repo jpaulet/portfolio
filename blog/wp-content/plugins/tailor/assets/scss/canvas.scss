@@ -1,0 +1,32 @@
+@import "variables";
+
+//
+// Tools
+//
+@import "tools/keyframes";
+@import "tools/transform";
+@import "tools/transition";
+@import "tools/user-select";
+@import "tools/prefixer";
+@import "tools/clearfix";
+@import "tools/box-shadow";
+
+//
+// Generic styles
+//
+@import "generic/box-sizing";
+
+//
+// Components
+//
+@import "components/canvas/canvas";
+@import "components/canvas/states";
+@import "components/canvas/tools";
+@import "components/canvas/elements";
+
+//
+// Trumps
+//
+@import "trumps/canvas/rtl";
+@import "trumps/canvas/utility";
+@import "trumps/shared/wordpress";

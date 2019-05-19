@@ -1,0 +1,112 @@
+//
+// Variables
+//
+
+// General
+$posts-class-prefix: $global-class-prefix !default;
+$posts-spacing-vertical: $global-spacing-vertical !default;
+$posts-padding: 0 !default;
+$posts-font-size: $global-font-size !default;
+$posts-color: inherit !default;
+$posts-border-width: $global-border-width !default;
+$posts-border-style : none !default;
+$posts-border-color: $global-border-color !default;
+$posts-border-radius: 0 !default;
+$posts-background-color: transparent !default;
+$posts-box-shadow: none !default;
+
+// Element specific
+$posts-entry-border-width: $global-border-width !default;
+$posts-entry-border-style: $global-border-style !default;
+$posts-entry-border-color: $global-border-color !default;
+$posts-entry-background-color: $global-white-color !default;
+
+
+//
+// Exported selectors
+//
+.#{$global-class-prefix}ui {
+
+	.#{$posts-class-prefix}posts {
+		padding: $posts-padding;
+		margin-bottom: $posts-spacing-vertical;
+		font-size: $posts-font-size;
+		color: $posts-color;
+		background-color: $posts-background-color;
+		border: $posts-border-width $content-border-style $content-border-color;
+		border-radius: $posts-border-radius;
+		box-shadow: $posts-box-shadow;
+
+		.entry {
+			margin-bottom: ( $posts-spacing-vertical * 1.5 );
+
+			&__title {
+				margin: $posts-spacing-vertical 0 ( $posts-spacing-vertical / 2 );
+
+				a {
+					color: inherit;
+				}
+			}
+
+			&__meta {
+				display: block;
+				font-size: ( $posts-font-size * 0.8 );
+
+				span {
+					position: relative;
+					display: inline-block;
+
+					&:not( :last-child ) {
+						padding-right: ( $posts-spacing-vertical / 2 );
+						margin-right: ( $posts-spacing-vertical / 2 );
+
+						&::after {
+							position: absolute;
+							right: 0;
+							content: '|';
+						}
+					}
+				}
+			}
+
+			&__thumbnail {
+				overflow: hidden;
+
+				a {
+					display: block;
+				}
+
+				img {
+					margin: 0;
+				}
+			}
+
+			&__more {
+				display: inline-block;
+				margin-top: ( $posts-spacing-vertical / 4 );
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		.entry-pagination {
+			margin-top: $posts-spacing-vertical;
+		}
+
+		// Variations
+		&--boxed {
+
+			.entry {
+				border: $posts-entry-border-width $posts-entry-border-style $posts-entry-border-color;
+				background-color: $posts-entry-background-color;
+				overflow: hidden;
+
+				&__content {
+					padding: 0 ( $posts-spacing-vertical * 2 ) ( $posts-spacing-vertical * 2 );
+				}
+			}
+		}
+	}
+}

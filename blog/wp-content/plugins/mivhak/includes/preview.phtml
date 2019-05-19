@@ -1,0 +1,53 @@
+<link rel="stylesheet" type="text/css" href="<?php echo Mivhak\CSS_URL; ?>/mivhak.min.css" />
+<style>.prettyprint { font-size: 14px }</style>
+<p style="text-align: center; font-weight: bold">Live Preview</p>
+<pre class="prettyprint lang-java" data-highlight="10-15">
+class Human
+{
+    /**
+     * The human's age.
+     */
+    private int age;
+    
+    public Human() { this.age = 0; }
+    
+    public void birthday()
+    {
+        // Increment age by 1;
+        this.age++;
+        System.out.printf("Happy Birthday! you are now %i years old", this.age);
+    }
+}
+</pre>
+<p>This is an inline code example <code class="prettyprint">var foo = "bar"</code></p>
+<script>
+    var mivhak_settings = { 
+        show_meta:true, 
+        min_lines:1, 
+        line_numbers: true,
+        auto_assign: 'code,pre,xhr', 
+        font_size: parseInt(jQuery('[data-name="font_size"]').attr('data-value')), 
+        theme: jQuery('#theme').val(), 
+        lang_list: <?php echo json_encode(include(__DIR__.'/configs/langs.php')) ?>,
+        i18n: <?php echo json_encode(include(__DIR__.'/configs/strings.php')) ?> 
+    };
+</script>
+<script>
+    jQuery(document).ready(function($){
+        var editor = ace.edit($('.mivhak-code-wrapper pre')[0]);
+        
+        $('#theme').change(function(){
+            editor.setTheme("ace/theme/"+$('#theme').val());
+        });
+
+        $('#font_size').change(function(){
+            var fontSize = parseInt($('#font_size').attr('aria-valuenow'));
+            editor.setFontSize(fontSize);
+        });
+        
+        $('.amarkal-options .main-menu a').click(function(){
+            // This is used to 'wake up' the editor so that it recalculates the height when it becomes visible
+            setTimeout(function(){editor.setTheme("ace/theme/"+$('#theme').val());},100);
+        });
+    });
+</script>

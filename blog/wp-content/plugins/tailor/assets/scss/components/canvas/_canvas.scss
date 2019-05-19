@@ -1,0 +1,49 @@
+.is-loading {
+	background: url( ../img/spinner.gif ) no-repeat center center;
+	-webkit-background-size: 20px 20px;
+	background-size: 20px 20px;
+
+	> * {
+		opacity: 0.5;
+	}
+}
+
+@media print,
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 120dpi) {
+
+	.is-loading {
+		background: url( ../img/spinner-2x.gif ) no-repeat center center;
+		-webkit-background-size: 20px 20px;
+		background-size: 20px 20px;
+	}
+}
+
+[draggable=true] {
+	-khtml-user-drag: element;
+	-webkit-user-drag: element;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+
+	@include prefixer( user-select, none, webkit moz ms spec );
+}
+
+.#{$global-class-prefix}ui {
+
+	.#{$global-class-prefix}element {
+		cursor: default;
+
+		.gm-style,
+		iframe {
+			pointer-events: none;
+		}
+
+		&.is-selected {
+
+			.gm-style,
+			iframe {
+				pointer-events: all;
+			}
+		}
+	}
+}

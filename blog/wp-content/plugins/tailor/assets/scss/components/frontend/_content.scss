@@ -1,0 +1,48 @@
+//
+// Variables
+//
+
+// General
+$content-class-prefix: $global-class-prefix !default;
+$content-spacing-vertical: $global-spacing-vertical !default;
+$content-padding: 0 !default;
+$content-font-size: $global-font-size !default;
+$content-color: inherit !default;
+$content-border-width: $global-border-width !default;
+$content-border-style : none !default;
+$content-border-color: $global-border-color !default;
+$content-border-radius: 0 !default;
+$content-background-color: transparent !default;
+$content-box-shadow: none !default;
+
+
+//
+// Exported selectors
+//
+.#{$global-class-prefix}ui {
+
+	.#{$content-class-prefix}content {
+		padding: $content-padding;
+		margin-bottom: $content-spacing-vertical;
+		font-size: $content-font-size;
+		color: $content-color;
+		background-color: $content-background-color;
+		border: $content-border-width $content-border-style $content-border-color;
+		border-radius: $content-border-radius;
+		box-shadow: $content-box-shadow;
+
+		// To ensure floats used within the content area are cleared
+		@include clearfix;
+
+		> :last-child {
+			margin-bottom: 0;
+		}
+
+		&--placeholder {
+
+			p {
+				opacity: 0.5;
+			}
+		}
+	}
+}

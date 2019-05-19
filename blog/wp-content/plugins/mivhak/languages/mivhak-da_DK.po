@@ -1,0 +1,288 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Mivhak Syntax Highlighter\n"
+"POT-Creation-Date: 2016-04-03 01:58+0200\n"
+"PO-Revision-Date: 2016-04-04 00:27+0200\n"
+"Last-Translator: Henrik Gregersen <henrik@bonest.dk>\n"
+"Language-Team: Henrik Gregersen <henrik@bonest.dk>\n"
+"Language: da_DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: bootstrap.php\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: includes/configs/editor.php:20
+msgid "Language"
+msgstr "Sprog"
+
+#: includes/configs/editor.php:21
+msgid "Choose the programming language."
+msgstr "Vælg programmeringssproget"
+
+#: includes/configs/editor.php:27
+msgid "Display Type"
+msgstr "Visning"
+
+#: includes/configs/editor.php:28
+msgid ""
+"Choose between displaying the code inlined with the text, or in its own "
+"block."
+msgstr "Vælg mellem at vise koden indlejret med teksten, eller som en blok."
+
+#: includes/configs/editor.php:37
+msgid "Initial Visibility"
+msgstr "Start skjult"
+
+#: includes/configs/editor.php:38
+msgid ""
+"Hidden code blocks will not be visible to the user until he clicks on \"show "
+"code\""
+msgstr ""
+"Skjulte kode blokke vises ikke til brugeren før brugeren klikker på “Vis "
+"koden”"
+
+#: includes/configs/editor.php:39 includes/configs/editor.php:50
+msgid "(applicable to code blocks only)"
+msgstr "(kan kun anvendes på blok visning)"
+
+#: includes/configs/editor.php:48
+msgid "Caption Text"
+msgstr "Billedtekst"
+
+#: includes/configs/editor.php:49
+msgid "Add a description to your code"
+msgstr "En kort beskrivelse af din kode"
+
+#: includes/configs/editor.php:54
+msgid "Highlight Line(s)"
+msgstr "Fremhæv linje(r)"
+
+#: includes/configs/editor.php:55
+msgid "Highlight specific code lines or a range of lines"
+msgstr "Fremhæv bestemte linjer"
+
+#: includes/configs/editor.php:56
+msgid "(i.e. 1, 3-5, 7-12)"
+msgstr "(eks 1,3-5,7-12)"
+
+#: includes/configs/editor.php:60
+msgid "Starting Line"
+msgstr "Start linjenr"
+
+#: includes/configs/editor.php:63
+msgid "Choose the first line number"
+msgstr "Vælg linjenummer for første linje"
+
+#: includes/configs/options.php:29
+msgid "General syntax highlighting settings."
+msgstr "Generel opsætning"
+
+#: includes/configs/options.php:34
+msgid "Line Numbers"
+msgstr "Linjenumre"
+
+#: includes/configs/options.php:36
+msgid "Show/hide line numbers for highlighted code blocks."
+msgstr "Vis/Skjul linjenumre "
+
+#: includes/configs/options.php:40
+msgid "Show Meta Bar"
+msgstr "Vis meta bjælke"
+
+#: includes/configs/options.php:42
+msgid "Show/hide a header bar with meta information and controls."
+msgstr "Vis/Skjul top bjælke med meta oplysninger og funktioner."
+
+#: includes/configs/options.php:46
+msgid "Minimum Lines"
+msgstr "Minimum linjer"
+
+#: includes/configs/options.php:50
+msgid ""
+"Code blocks with less lines than specified here will not show a meta header "
+"bar."
+msgstr "Kode blokke med linjer mindre end dette skjuler meta top bjælken"
+
+#: includes/configs/options.php:54
+msgid "Auto Assign"
+msgstr "Auto formater"
+
+#: includes/configs/options.php:57
+msgid ""
+"Choose the HTML elements that you want Mivhak to automatically syntax-"
+"highlight."
+msgstr "Vælg HTML koderne som skal aktivere Mivhak syntax-highlight."
+
+#: includes/configs/options.php:61
+msgid "Default Language"
+msgstr "Standard sprog"
+
+#: includes/configs/options.php:62
+msgid ""
+"Choose a programming language that will be used by default for code blocks "
+"that have no specified programming language."
+msgstr ""
+"Vælg programmeringssproget som anvedes som standard til kode blokke som ikke "
+"har defineret et programmeringssprog."
+
+#: includes/configs/options.php:71
+msgid "Setup the look and feel of Mivhak"
+msgstr "Opsæt hvordan Mivahk ses for brugerne"
+
+#: includes/configs/options.php:75
+msgid "Use Custom CSS"
+msgstr "Brugerdefineret CSS"
+
+#: includes/configs/options.php:76
+msgid ""
+"Toggle on/off to use the custom CSS on the next field. The CSS code will be "
+"printed in the document's head"
+msgstr ""
+"Aktiver eller deaktiver om der skal anvendes brugertilpasset CSS. CSS "
+"koderne indsættes i doc header"
+
+#: includes/configs/options.php:81
+msgid "Custom CSS Code"
+msgstr "Brugerdefineret CSS kode"
+
+#: includes/configs/options.php:82
+msgid ""
+"Insert your custom CSS here. Since this will be printed in the head of the "
+"document (as opposed to making an http request), it is not recommended to "
+"use this for big CSS changes (hundreds of lines of code)."
+msgstr ""
+"Indtast dine CSS koder her. Da disse koder indsættes i doc header, anbefales "
+"det ikke at der anvendes for mange linjer kode her."
+
+#: includes/configs/options.php:88
+msgid "Font Size"
+msgstr "Skriftstørrelse"
+
+#: includes/configs/options.php:89
+msgid "Set the code editor font size in pixels."
+msgstr "Angiv skriftstørrelsen i pixels."
+
+#: includes/configs/options.php:95
+msgid "Theme"
+msgstr "Tema"
+
+#: includes/configs/options.php:96
+msgid "Choose a highlighter theme that best matches your blog's theme style."
+msgstr ""
+"Vælg et highlighter tema som bedst passer med din blogs stil og indhold"
+
+#: includes/configs/options.php:101
+msgid "Preview"
+msgstr "Forhåndsvisning"
+
+#: includes/configs/strings.php:4
+msgid "line"
+msgstr "linje"
+
+#: includes/configs/strings.php:5
+msgid "lines"
+msgstr "linjer"
+
+#: includes/configs/strings.php:6
+msgid "Copy this code to clipboard"
+msgstr "Kopiér til udklipsholder"
+
+#: includes/configs/strings.php:7
+msgid "Open this code in a new window"
+msgstr "Vis koden i nyt vindue"
+
+#: includes/configs/strings.php:8
+msgid "Wrap lines"
+msgstr "Ombryd linjer"
+
+#: includes/configs/strings.php:9
+msgid "Show code"
+msgstr "Vis koden"
+
+#: includes/configs/strings.php:10
+msgid "About"
+msgstr "Om"
+
+#: vendor/askupa-software/amarkal-framework/EnvironmentValidator.php:207
+#, php-format
+msgid ""
+"<strong>Amarkal Framework has detected an error:</strong><br/>The %s <strong>"
+"%s</strong> requires PHP %s or newer to run (currently installed version: "
+"%s). Please upgrade your PHP version."
+msgstr ""
+"<strong>Amarkal Framework er gået i en fejl:</strong><br/> %s <strong>%s</"
+"strong> kræver PHP %s eller nyere for at kunne fungere (din server anvender "
+"version: %s). Opgrader venligst serverens PHP version."
+
+#: vendor/askupa-software/amarkal-framework/Extensions/WordPress/Admin/PostType.php:52
+#, php-format
+msgid "Add %s"
+msgstr "Ny %s"
+
+#: vendor/askupa-software/amarkal-framework/Extensions/WordPress/Admin/PostType.php:53
+#, php-format
+msgid "Add New %s"
+msgstr "Opret ny %s"
+
+#: vendor/askupa-software/amarkal-framework/Extensions/WordPress/Admin/PostType.php:54
+#, php-format
+msgid "Edit %s"
+msgstr "Rediger %s"
+
+#: vendor/askupa-software/amarkal-framework/Extensions/WordPress/Admin/PostType.php:55
+#, php-format
+msgid "New %s"
+msgstr "Ny %s"
+
+#: vendor/askupa-software/amarkal-framework/Extensions/WordPress/Admin/PostType.php:57
+#, php-format
+msgid "View %s"
+msgstr "Vis %s"
+
+#: vendor/askupa-software/amarkal-framework/Extensions/WordPress/Admin/PostType.php:58
+#, php-format
+msgid "Search %s"
+msgstr "Søg %s"
+
+#: vendor/askupa-software/amarkal-framework/Extensions/WordPress/Admin/PostType.php:59
+#, php-format
+msgid "No %s found"
+msgstr "Ingen %s fundet"
+
+#: vendor/askupa-software/amarkal-framework/Extensions/WordPress/Admin/PostType.php:60
+#, php-format
+msgid "No %s found in Trash"
+msgstr "Ingen %s fundet i papirkurven"
+
+#. Plugin Name of the plugin/theme
+msgid "Mivhak Syntax Highlighter"
+msgstr "Mivhak Syntax Highlighter"
+
+#. Plugin URI of the plugin/theme
+msgid "http://products.askupasoftware.com/mivhak"
+msgstr "http://products.askupasoftware.com/mivhak"
+
+#. Description of the plugin/theme
+msgid ""
+"A lightweight syntax highlighter for WordPress, fully integrated into the "
+"TinyMCE rich editor."
+msgstr ""
+"En letvægts kode syntax highlighter til WordPress, fuldt integreret i "
+"TinyMCE editoren."
+
+#. Author of the plugin/theme
+msgid "Askupa Software"
+msgstr "Askupa Software"
+
+#. Author URI of the plugin/theme
+msgid "http://www.askupasoftware.com"
+msgstr "http://www.askupasoftware.com"

@@ -1,0 +1,268 @@
+//
+// Variables
+//
+
+// General
+$list-class-prefix: $global-class-prefix !default;
+$list-spacing-vertical: $global-spacing-vertical !default;
+$list-padding: 0 !default;
+$list-font-size: 1em !default;
+$list-color: inherit !default;
+$list-border-width: $global-border-width !default;
+$list-border-style : none !default;
+$list-border-color: $global-border-color !default;
+$list-border-radius: 0 !default;
+$list-background-color: transparent !default;
+$list-box-shadow: none !default;
+
+// Element specific
+$list-graphic-size: 1.5em !default;
+
+
+//
+// Exported selectors
+//
+.#{$global-class-prefix}ui {
+
+	.#{$list-class-prefix}list {
+		padding: $list-padding;
+		margin: 0;
+		font-size: $list-font-size;
+		color: $list-color;
+		background-color: $list-background-color;
+		border: $list-border-width $list-border-style $list-border-color;
+		border-radius: $list-border-radius;
+		box-shadow: $list-box-shadow;
+
+		&__graphic {
+			position: relative;
+			float: left;
+			text-align: center;
+
+			@include transition( all $global-transition-duration );
+		}
+
+		&__body {
+			display: block;
+			overflow: hidden;
+		}
+
+		&__title {
+			display: block;
+			padding: 0;
+			margin: 0.65em 0 0.5em;
+			font-size: inherit;
+			line-height: inherit;
+		}
+
+		&__content {
+
+			:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		&__item {
+			padding: 0;
+			margin: 0 0 $list-spacing-vertical;
+			list-style: none;
+			border-color: $list-border-color;
+
+			@include clearfix;
+
+			// Types
+			&--image {
+
+				.#{$list-class-prefix}list {
+
+					&__graphic {
+						max-width: ( $list-graphic-size * 2 );
+					}
+				}
+
+				&.#{$list-class-prefix}list {
+
+					&__item {
+
+						&--left {
+
+							.#{$list-class-prefix}list {
+
+								&__graphic {
+									margin-right: $list-spacing-vertical;
+								}
+							}
+						}
+
+						&--right {
+
+							.#{$list-class-prefix}list {
+
+								&__graphic {
+									margin-left: $list-spacing-vertical;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			&--number {
+				counter-increment: step-counter;
+
+				.#{$list-class-prefix}list {
+
+					&__graphic {
+
+						span {
+							font-weight: 600;
+
+							&::before {
+								content: counter( step-counter );
+							}
+						}
+					}
+				}
+			}
+
+			&--icon,
+			&--number {
+
+				.#{$list-class-prefix}list {
+
+					&__graphic {
+						display: table;
+						width: ( $list-graphic-size * 2 );
+						height: ( $list-graphic-size * 2 );
+						border-radius: 50%;
+
+						span {
+							position: relative;
+							z-index: 2;
+							display: table-cell;
+							width: 100%;
+							vertical-align: middle;
+						}
+					}
+				}
+			}
+
+			&--icon {
+
+				.#{$list-class-prefix}list {
+
+					&__graphic {
+
+						span {
+							font-size: $list-graphic-size;
+						}
+					}
+				}
+			}
+
+			// Alignments
+			&.u-text-left {
+
+				.#{$list-class-prefix}list {
+
+					&__graphic {
+						float: left;
+					}
+				}
+			}
+
+			&.u-text-right {
+
+				.#{$list-class-prefix}list {
+
+					&__graphic {
+						float: right;
+					}
+				}
+			}
+
+			@media #{$tablet} {
+
+				&.u-text-left-tablet {
+
+					.#{$list-class-prefix}list {
+
+						&__graphic {
+							float: left;
+						}
+					}
+				}
+
+				&.u-text-right-tablet {
+
+					.#{$list-class-prefix}list {
+
+						&__graphic {
+							float: right;
+						}
+					}
+				}
+			}
+
+			@media #{$mobile} {
+
+				&.u-text-left-mobile {
+
+					.#{$list-class-prefix}list {
+
+						&__graphic {
+							float: left;
+						}
+					}
+				}
+
+				&.u-text-right-mobile {
+
+					.#{$list-class-prefix}list {
+
+						&__graphic {
+							float: right;
+						}
+					}
+				}
+			}
+
+
+			&.u-text-left,
+			&.u-text-left-tablet,
+			&.u-text-left-mobile,
+			&.u-text-right,
+			&.u-text-right-tablet,
+			&.u-text-right-mobile {
+				@include clearfix;
+			}
+		}
+	}
+}
+
+[dir=rtl] {
+
+	.#{$global-class-prefix}ui {
+
+		.#{$list-class-prefix}list {
+
+			&__graphic {
+				float: right;
+			}
+
+			&__item {
+
+				// Alignments
+				&.u-text-left {
+
+					.#{$list-class-prefix}list {
+
+						&__graphic {
+							float: left;
+						}
+					}
+				}
+			}
+		}
+	}
+}

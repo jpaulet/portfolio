@@ -1,0 +1,1 @@
+pre,code{direction:ltr !important;border:1px solid #777;background-color:#dcf4ff;font-size:12px;padding:10px 10px}pre::selection,code::selection{background-color:transparent}pre:hover,pre .selected,code:hover,code .selected{cursor:pointer}code{border:1px solid rgba(0,0,0,0.1);padding:4px 8px}pre>code{border:none;padding:initial}

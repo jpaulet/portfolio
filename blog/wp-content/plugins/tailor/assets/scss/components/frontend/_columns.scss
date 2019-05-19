@@ -1,0 +1,150 @@
+//
+// Variables
+//
+
+// General
+$row-class-prefix: $global-class-prefix !default;
+$row-spacing-vertical: $global-spacing-vertical !default;
+$row-spacing-horizontal: $global-spacing-horizontal !default;
+$row-padding: 0 !default;
+$row-font-size: $global-font-size !default;
+$row-color: inherit !default;
+$row-border-width: $global-border-width !default;
+$row-border-style : none !default;
+$row-border-color: $global-border-color !default;
+$row-border-radius: 0 !default;
+$row-background-color: transparent !default;
+$row-box-shadow: none !default;
+
+// Child specifc
+$column-class-prefix: $global-class-prefix !default;
+$column-spacing-vertical: 0 !default;
+$column-padding: 0 !default;
+$column-font-size: $global-font-size !default;
+$column-color: inherit !default;
+$column-border-width: $global-border-width !default;
+$column-border-style : none !default;
+$column-border-color: $global-border-color !default;
+$column-border-radius: 0 !default;
+$column-background-color: transparent !default;
+$column-box-shadow: none !default;
+
+// Element specific
+$column-number: 12 !default;
+
+
+//
+// Mixins
+//
+@mixin row( $size ) {
+
+	// Row
+	.#{$size}-columns {
+		margin-left: -$row-spacing-horizontal;
+		margin-right: -$row-spacing-horizontal;
+
+		@include flex;
+
+		// Widths
+		@for $i from 1 through $column-number {
+
+			.columns-#{$i} {
+				width: percentage( ( $i / $column-number ) );
+			}
+		}
+
+		@for $i from 1 through $column-number {
+
+			@media #{$tablet} {
+
+				.columns-tablet-#{$i} {
+					width: percentage( ( $i / $column-number ) );
+				}
+			}
+		}
+
+		@for $i from 1 through $column-number {
+
+			@media #{$mobile} {
+
+				.columns-mobile-#{$i} {
+					width: percentage( ( $i / $column-number ) );
+				}
+			}
+		}
+
+		// Column
+		.#{$column-class-prefix}column {
+			padding-left: $row-spacing-horizontal;
+			padding-right: $row-spacing-horizontal;
+
+			@include flex( column );
+
+			> :last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+
+//
+// Exported selectors
+//
+.#{$global-class-prefix}ui {
+
+	.#{$row-class-prefix}row {
+		position: relative;
+		padding: $row-padding;
+		margin-bottom: $row-spacing-vertical;
+		font-size: $row-font-size;
+		color: $row-color;
+		background-color: $row-background-color;
+		border: $row-border-width $row-border-style $row-border-color;
+		border-radius: $row-border-radius;
+		box-shadow: $row-box-shadow;
+	}
+
+	.#{$column-class-prefix}column {
+		position: relative;
+		min-height: 1px;
+		padding: $column-padding;
+		margin-bottom: $column-spacing-vertical;
+		width: 100%;
+		font-size: $column-font-size;
+		color: $column-color;
+		background-color: $column-background-color;
+		border: $column-border-width $column-border-style $column-border-color;
+		border-radius: $column-border-radius;
+		box-shadow: $column-box-shadow;
+	}
+}
+
+// RTL support
+[dir=rtl] {
+
+	.#{$global-class-prefix}ui {
+
+		.#{$row-class-prefix}row {
+			-ms-flex-direction: row-reverse;
+			flex-direction: row-reverse;
+		}
+	}
+}
+
+
+//
+// Media queries
+//
+.#{$global-class-prefix}ui {
+
+	@include row( mobile );
+
+	@media #{$tablet-up} {
+		@include row( tablet );
+	}
+
+	@media #{$desktop} {
+		@include row( desktop );
+	}
+}

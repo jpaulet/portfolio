@@ -1,0 +1,210 @@
+//
+// Variables
+//
+
+// General
+$button-class-prefix: $global-class-prefix !default;
+$button-spacing-vertical: $global-spacing-vertical !default;
+$button-padding: 1em !default;
+$button-font-size: $global-font-size !default;
+$button-border-width: $global-border-width !default;
+$button-border-style : $global-border-style !default;
+$button-border-color: $global-border-color !default;
+$button-border-color--primary: darken( $global-primary-color, 2% ) !default;
+$button-border-radius: $global-border-radius !default;
+$button-color: inherit !default;
+$button-color--primary: #fff !default;
+$button-background-color: $global-background-color !default;
+$button-background-color--primary: $global-primary-color !default;
+$button-box-shadow: $global-box-shadow !default;
+
+
+//
+// Exported selectors
+//
+.#{$global-class-prefix}ui {
+
+	.#{$button-class-prefix}button {
+		margin-bottom: $button-spacing-vertical;
+		width: 100%;
+
+		&__inner {
+			display: inline-block;
+			padding: ( $button-padding / 2 ) ( $button-padding * 1.5 );
+			margin: 0;
+			text-align: center;
+			cursor: pointer;
+			font-family: inherit;
+			font-size: $button-font-size;
+			color: $button-color;
+			background-color: $button-background-color;
+			border: $button-border-width $button-border-style $button-border-color;
+			border-radius: $button-border-radius;
+			box-shadow: $button-box-shadow;
+			text-decoration: none;
+
+			@include transition( all $global-transition-duration );
+
+			> * {
+				display: inline-table;
+				line-height: inherit;
+				font-size: inherit;
+			}
+
+			i {
+
+				&:not( :only-child ) {
+					margin-right: 0.25em;
+				}
+			}
+
+			// States
+			&:focus,
+			&:hover {
+				outline: 0;
+				background-color: darken( $button-background-color, 2% );
+			}
+
+			&:active {
+				background-color: darken( $button-background-color, 5% );
+			}
+
+			&:focus,
+			&:hover,
+			&:active {
+				border-color: darken( $button-border-color, 5% );
+			}
+		}
+
+		// Variations
+		&--primary {
+
+			.#{$button-class-prefix}button {
+
+				&__inner {
+					color: $button-color--primary;
+					background-color: $button-background-color--primary;
+					border-color: $button-border-color--primary;
+
+					// States
+					&:focus,
+					&:hover {
+						background-color: darken( $button-background-color--primary, 2% );
+					}
+
+					&:active {
+						background-color: darken( $button-background-color--primary, 5% );
+					}
+
+					&:hover,
+					&:focus,
+					&:active {
+						border-color: darken( $button-border-color--primary, 5% );
+					}
+				}
+			}
+		}
+
+		&--block,
+		&.u-text-justify {
+
+			.#{$button-class-prefix}button {
+
+				&__inner {
+					display: block;
+				}
+			}
+		}
+
+		@media #{$tablet} {
+
+			&--block-mobile,
+			&.u-text-justify-tablet {
+
+				.#{$button-class-prefix}button {
+
+					&__inner {
+						display: block;
+					}
+				}
+			}
+
+			&.u-text-left-tablet,
+			&.u-text-center-tablet,
+			&.u-text-right-tablet {
+
+				.#{$button-class-prefix}button {
+
+					&__inner {
+						display: inline-block;
+					}
+				}
+			}
+		}
+
+		@media #{$mobile} {
+
+			&--block-mobile,
+			&.u-text-justify-mobile {
+
+				.#{$button-class-prefix}button {
+
+					&__inner {
+						display: block;
+					}
+				}
+			}
+
+			&.u-text-left-mobile,
+			&.u-text-center-mobile,
+			&.u-text-right-mobile {
+
+				.#{$button-class-prefix}button {
+
+					&__inner {
+						display: inline-block;
+					}
+				}
+			}
+		}
+
+		// Sizes
+		&--small {
+			font-size: ( $button-font-size * 0.8 );
+		}
+
+		&--large {
+			font-size: ( $button-font-size * 1.6 );
+		}
+
+		@media #{$tablet} {
+
+			&--small-tablet {
+				font-size: ( $button-font-size * 0.8 );
+			}
+
+			&--medium-tablet {
+				font-size: ( $button-font-size );
+			}
+
+			&--large-tablet {
+				font-size: ( $button-font-size * 1.6 );
+			}
+		}
+
+		@media #{$mobile} {
+
+			&--small-mobile {
+				font-size: ( $button-font-size * 0.8 );
+			}
+
+			&--medium-mobile {
+				font-size: ( $button-font-size );
+			}
+
+			&--large-mobile {
+				font-size: ( $button-font-size * 1.6 );
+			}
+		}
+	}
+}

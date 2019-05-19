@@ -1,0 +1,208 @@
+//
+// Variables
+//
+
+// General
+$tabs-class-prefix: $global-class-prefix !default;
+$tabs-spacing-vertical: $global-spacing-vertical !default;
+$tabs-padding: 0 !default;
+$tabs-font-size: $global-font-size !default;
+$tabs-color: inherit !default;
+$tabs-border-width: $global-border-width !default;
+$tabs-border-style : none !default;
+$tabs-border-color: $global-border-color !default;
+$tabs-border-radius: 0 !default;
+$tabs-background-color: transparent !default;
+$tabs-box-shadow: none !default;
+
+// Child specific
+$tabs-tab-padding: 1em !default;
+$tabs-tab-border-width: $global-border-width !default;
+$tabs-tab-border-style : $global-border-style !default;
+$tabs-tab-border-color: $global-border-color !default;
+$tabs-tab-background-color: $background-color !default;
+$tabs-tab-background-color--active: #fff !default;
+
+
+//
+// Exported selectors
+//
+.#{$global-class-prefix}ui {
+
+	.#{$tabs-class-prefix}tabs {
+		padding: $tabs-padding;
+		margin-bottom: $tabs-spacing-vertical;
+		font-size: $tabs-font-size;
+		color: $tabs-color;
+		background-color: $tabs-background-color;
+		border: $tabs-border-width $tabs-border-style $tabs-border-color;
+		border-radius: $tabs-border-radius;
+		box-shadow: $tabs-box-shadow;
+
+		&__navigation,
+		&__content {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+
+		&__navigation-item {
+			position: relative;
+			z-index: 1;
+			display: block;
+			padding: 0.5em 1em;
+			margin-bottom: -$tabs-tab-border-width;
+			border: $tabs-tab-border-width $tabs-tab-border-style $tabs-tab-border-color;
+			font-weight: bold;
+			cursor: pointer;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+
+			@include user-select( none );
+
+			&.is-active {
+				z-index: 3;
+				background-color: $tabs-tab-background-color--active;
+			}
+
+			&:not( .is-active ) {
+				background-color: $tabs-tab-background-color;
+			}
+		}
+	}
+
+	.#{$tabs-class-prefix}tab {
+		position: relative;
+		z-index: 2;
+		padding: $tabs-tab-padding;
+		margin: 0;
+		border: $tabs-tab-border-width $tabs-tab-border-style $tabs-tab-border-color;
+		background-color: $tabs-tab-background-color--active;
+
+		&:not( :first-child ) {
+			display: none;
+		}
+	}
+}
+
+// Ensure content is visible when Javascript it not enabled or when viewed in the editor
+.#{$global-class-prefix}editor,
+.no-js {
+
+	.#{$tabs-class-prefix}tabs {
+
+		&__content {
+
+			.tailor-tab {
+				display: block;
+			}
+		}
+	}
+}
+
+
+//
+// Media queries
+//
+@media #{$tablet-up} {
+
+	.#{$global-class-prefix}ui {
+
+		.#{$tabs-class-prefix}tabs {
+
+			&__navigation {
+				@include clearfix;
+
+				&-item {
+					max-width: 180px;
+				}
+			}
+
+			// Variations
+			&--top {
+
+				.#{$tabs-class-prefix}tabs {
+
+					&__navigation {
+						margin-bottom: -$tabs-tab-border-width;
+
+						&-item {
+							float: left;
+							margin-bottom: 0;
+							border-bottom: none;
+
+							&:not( :last-child ) {
+								margin-right: -$tabs-tab-border-width;
+							}
+						}
+					}
+				}
+			}
+
+			&--left {
+
+				.#{$tabs-class-prefix}tabs {
+
+					&__navigation {
+						float: left;
+						margin-right: -$tabs-tab-border-width;
+
+						&-item {
+							margin-bottom: 0;
+							border-right: none;
+
+							&.is-active {
+								border-right-color: $tabs-tab-background-color--active;
+							}
+						}
+					}
+				}
+			}
+
+			&--right {
+
+				.#{$tabs-class-prefix}tabs {
+
+					&__navigation {
+					float: right;
+					margin-left: -$tabs-tab-border-width;
+
+						&-item {
+							margin-bottom: 0;
+							border-left: none;
+
+							&.is-active {
+								border-left-color: $tabs-tab-background-color--active;
+							}
+						}
+					}
+				}
+			}
+
+			&--left,
+			&--right {
+
+				.#{$tabs-class-prefix}tabs {
+
+					&__navigation-item {
+
+						&:not( :first-child ) {
+							margin-top: -$tabs-tab-border-width;
+						}
+					}
+
+					&__content {
+
+						.tailor-tab {
+							display: block;
+							overflow: hidden;
+						}
+					}
+				}
+
+				@include clearfix;
+			}
+		}
+	}
+}

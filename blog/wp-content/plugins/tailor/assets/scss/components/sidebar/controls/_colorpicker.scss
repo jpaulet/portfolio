@@ -1,0 +1,11 @@
+.wp-color-result {
+	height: auto;
+}
+
+.wp-picker-container input[type=text].wp-color-picker {
+	width: 65px;
+
+	&[data-rgba="true"] {
+		width: 150px;
+	}
+}

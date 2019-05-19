@@ -1,0 +1,10 @@
+@mixin flex( $direction: null ) {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+
+  @if ( $direction ) {
+    -ms-flex-direction: $direction;
+    flex-direction: $direction;
+  }
+}
