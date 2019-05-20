@@ -1,4 +1,0 @@
-/**
- * Editor namespace
- */
-Amarkal.Editor = {};
